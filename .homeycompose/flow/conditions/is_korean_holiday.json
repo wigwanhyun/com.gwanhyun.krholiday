@@ -1,0 +1,28 @@
+{
+  "id": "is_korean_holiday",
+  "title": {
+    "en": "It is a Korean Public Holiday",
+    "ko": "오늘이 한국 공휴일이라면"
+  },
+  "titleFormatted": {
+    "en": "It is [[flag]] a Korean Public Holiday",
+    "ko": "오늘이 한국 공휴일이 [[flag]]"
+  },
+  "args": [
+    {
+      "name": "flag",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "true",
+          "title": { "en": "True", "ko": "맞다면" }
+        },
+        {
+          "id": "false",
+          "title": { "en": "False", "ko": "아니라면" }
+        }
+      ],
+      "default": "true"
+    }
+  ]
+}

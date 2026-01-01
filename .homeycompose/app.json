@@ -1,0 +1,36 @@
+{
+  "id": "com.gwanhyun.krholiday",
+  "version": "1.0.0",
+  "compatibility": ">=10.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Korean Holiday",
+    "ko": "한국 공휴일"
+  },
+  "description": {
+    "en": "Automate your home based on South Korean public holidays.",
+    "ko": "대한민국의 공휴일 정보를 기반으로 Flow를 자동화하세요."
+  },
+  "category": "localization",
+  "permissions": [],
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png"
+  },
+  "author": {
+    "name": "위관현", 
+    "email": "dnlrhksgus0511@gmail.com"
+  },
+  "brandColor": "#000000",
+  "settings": [
+    {
+      "id": "service_key",
+      "type": "text",
+      "title": {
+        "en": "API Service Key",
+        "ko": "공공데이터포털 서비스 키"
+      },
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+    <style>
+      /* 간단한 스타일링 */
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 8px 15px;
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+      }
+      #save_message {
+        display: none;
+        margin-top: 10px;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h2>한국 공휴일 설정</h2>
+    <p>공공데이터포털에서 발급받은 <strong>Decoding 인증키</strong>를 입력해주세요.</p>
+
+    <div class="form-group">
+      <label for="service_key">API 서비스 키 (Service Key)</label>
+      <input type="text" id="service_key" placeholder="API 키를 입력하세요" />
+    </div>
+
+    <button id="save_button">저장 (Save)</button>
+    <div id="save_message">✅ 저장되었습니다!</div>
+
+    <script type="text/javascript">
+      function onHomeyReady(Homey) {
+        // 1. 앱이 준비되면 기존에 저장된 키 값을 불러와서 입력창에 채움
+        Homey.get('service_key', function(err, value) {
+          if (value) {
+            document.getElementById('service_key').value = value;
+          }
+        });
+
+        // 2. 저장 버튼 클릭 이벤트
+        document.getElementById('save_button').addEventListener('click', function() {
+          var newKey = document.getElementById('service_key').value;
+
+          // Homey에 값 저장 ('service_key'라는 이름으로)
+          Homey.set('service_key', newKey, function(err) {
+            if (err) {
+              return Homey.alert('저장 실패: ' + err);
+            }
+            
+            // 저장 성공 메시지 표시
+            var msg = document.getElementById('save_message');
+            msg.style.display = 'block';
+            setTimeout(function() {
+              msg.style.display = 'none';
+            }, 3000);
+          });
+        });
+
+        // 화면 크기 자동 조절
+        Homey.ready();
+      }
+    </script>
+  </body>
+</html>
