@@ -124,7 +124,7 @@ class KoreanHolidayApp extends Homey.App {
 
     } catch (error) {
       this.error('Failed to fetch holidays:', error);
-      return []; // 에러 발생 시 빈 배열 반환 (보수적 접근)
+      return []; // 에러 발생 시 빈 배열 반환 
     }
   }
 }
