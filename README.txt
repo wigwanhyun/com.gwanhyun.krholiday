@@ -5,7 +5,6 @@ It helps you automate your home based on holidays. For example, you can prevent 
 Features:
 - Check if today is a Korean public holiday.
 - Use flow cards to trigger actions based on holiday status.
-- Real-time updates using public data.
 
 Note:
 This app requires an internet connection to fetch the latest holiday data.
